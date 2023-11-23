@@ -55,20 +55,12 @@
 		
 		<script>
 			function add() {
-				// Passo I - a
+		
 				var inputValor = document.getElementById("valor");
-		
-				// Passo I - b
 				var listaValores = document.getElementById("valores");
-		
-				// Passo I - c
 				var node = document.createElement("li");
-		
-				// Passo I - d
 				var textNode = document.createTextNode(inputValor.value);
 				node.appendChild(textNode);
-		
-				// Passo I - e
 				listaValores.appendChild(node);
 			}
 		
@@ -76,7 +68,6 @@
 				
 				var listaValores = document.getElementById("valores");
 				var listaSelecao = document.getElementById("ordenando");
-
 				var valoresArray = Array.from(listaValores.children).map(function (item) {
 					return parseInt(item.innerHTML);
 				});
@@ -108,25 +99,21 @@
 			}
 					
 			function misturar() {
-				// Passo a - Capturar a lista de valores
+				
 				var listaValores = document.getElementById("valores");
-
-				// Passo b - Obter cada nó da lista de valores e adicionar o conteúdo convertido para inteiro em um vetor
+				
 				var valoresArray = Array.from(listaValores.children).map(function (item) {
 					return parseInt(item.innerHTML);
 				});
 
-				// Passo d - Aplicar a função shuffle ao vetor
 				shuffle(valoresArray, valoresArray.length);
-
-				// Passo e - Utilizar os operadores map e reduce para gerar os novos itens da lista
+				
 				var novosItens = valoresArray.map(function (valor) {
 					var node = document.createElement("li");
 					node.appendChild(document.createTextNode(valor));
 					return node;
 				});
 
-				// Substituir o conteúdo da lista via innerHTML
 				listaValores.innerHTML = "";
 				novosItens.forEach(function (item) {
 					listaValores.appendChild(item);
