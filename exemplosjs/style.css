@@ -67,3 +67,9 @@ label {
 	flex-direction: column;
 	gap: 1vh;
 }
+
+.active {
+	color: #3258FE;
+	background-color: white;
+	height: 25px;
+}
